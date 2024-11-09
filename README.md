@@ -37,9 +37,6 @@ candidate.testing.apiUrl=https://api.vatcomply.com/rates?base={base}&date={date}
 
 Relation database is needed, but requirement is that application will work with PostgreSQL. You can use test container, docker etc.
 
-Provide your solution as pull request in GitHub.
-
-
 ## Conversion implementation - 30 minutes - priority 1
 Design and implement REST service which provides API to convert amount from one currency to other.
 
