@@ -1,0 +1,109 @@
+databaseChangeLog:
+    - changeSet:        
+        id: 001-initial-data
+        author: bazik
+        changes:
+            - createTable:
+                tableName: audit_log
+                columns:
+                    - column:
+                        name: id
+                        type: bigint
+                        autoIncrement: true
+                        constraints:
+                            primaryKey: true
+                            nullable: false
+                    - column:
+                        name: audit_type
+                        type: varchar(50)
+                        constraints:
+                            nullable: false
+                    - column:
+                        name: audit_detail_message
+                        type: varchar(1024)
+                        constraints:
+                            nullable: false
+                    - column:
+                        name: failed
+                        type: bit
+                        constraints:
+                            nullable: false
+                    - column:
+                        name: error_detail
+                        type: varchar(1024)
+                    - column:
+                        name: created
+                        type: timestamp(6)
+                        constraints:
+                            nullable: false
+            - createTable:
+                tableName: customer
+                columns:
+                    - column:
+                        name: id
+                        type: bigint
+                        autoIncrement: true
+                        constraints:
+                            primaryKey: true
+                            nullable: false
+                    - column:
+                        name: name
+                        type: varchar(255)
+                        constraints:
+                            nullable: false
+                    - column:
+                        name: created
+                        type: timestamp(6)
+                        constraints:
+                            nullable: false
+            - createTable:
+                tableName: rate_history
+                columns:
+                    - column:
+                        name: id
+                        type: bigint
+                        autoIncrement: true
+                        constraints:
+                            primaryKey: true
+                            nullable: false
+                    - column:
+                        name: currency
+                        type: varchar(3)
+                        constraints:
+                            nullable: false
+                    - column:
+                        name: value
+                        type: double
+                        constraints:
+                            nullable: false
+                    - column:
+                        name: value_for
+                        type: date
+                        constraints:
+                            nullable: false
+            - createTable:
+                tableName: watched_currency
+                columns:
+                    - column:
+                        name: id
+                        type: bigint
+                        autoIncrement: true
+                        constraints:
+                            primaryKey: true
+                            nullable: false
+                    - column:
+                        name: currency
+                        type: varchar(3)
+                        constraints:
+                            nullable: false
+                    - column:
+                        name: created
+                        type: timestamp(6)
+                        constraints:
+                            nullable: false
+                    - column:
+                        name: customer_id
+                        type: bigint
+                        constraints:
+                            nullable: false
+
