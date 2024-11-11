@@ -37,7 +37,10 @@ candidate.testing.apiUrl=https://api.vatcomply.com/rates?base={base}&date={date}
 
 Relation database is needed, but requirement is that application will work with PostgreSQL. You can use test container, docker etc.
 
-## Conversion implementation - 30 minutes - priority 1
+## Overall code review - 20 minutes - priority 1
+Check existing code and fix you do not like. Comments would be accepted as well.
+
+## Conversion implementation - 30 minutes - priority 2
 Design and implement REST service which provides API to convert amount from one currency to other.
 
 Requirements:
@@ -48,14 +51,13 @@ Requirements:
   * Conversion to date
 
 
-## DB structure polishing - 20 minutes - priority 2
-Check DB and polish it to provider performance and protect consistency of data. All changes has to be implemented via Liquibase script.
+## DB structure polishing - 20 minutes - priority 3
+Check DB and polish it to provider performance and protect consistency of data. Ideally liquibase migration script for DB improvement will be appreciated, if you are familiar with Liquibase, but written/spoken form will be accepted as well.
 
+## Auditlog service implementation - 20 minutes - priority 4
+There is mock service for audit, but real implementation has to be done. Subtask is audit log message formatting in log4j style by replacing "{}" with value.
 
-## Auditlog service implementation - 20 minutes - priority 3
-There is mock service for audit, but real implementation has to be done.
-
-## Error handling implementation - 20 minutes - priority 4
+## Error handling implementation - 20 minutes - priority 5
 Application should return specific error structure:
 
 ```
@@ -78,5 +80,3 @@ There are some exception allows developer to propagate error from code by using 
 
 So, implement exception / error mapping to proper to specific error.
 
-## Overall code review - 20 minutes - priority 5
-Check existing code and fix you do not like. Comments would be accepted as well.
