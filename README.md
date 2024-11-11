@@ -51,13 +51,13 @@ Requirements:
   * Conversion to date
 
 
-## DB structure polishing - 20 minutes - priority 3
+## DB structure polishing - 10 minutes (20 minutes with liquibase migration) - priority 3
 Check DB and polish it to provider performance and protect consistency of data. Ideally liquibase migration script for DB improvement will be appreciated, if you are familiar with Liquibase, but written/spoken form will be accepted as well.
 
 ## Auditlog service implementation - 20 minutes - priority 4
 There is mock service for audit, but real implementation has to be done. Subtask is audit log message formatting in log4j style by replacing "{}" with value.
 
-## Error handling implementation - 20 minutes - priority 5
+## Error handling implementation - 10 minutes - priority 5
 Application should return specific error structure:
 
 ```
